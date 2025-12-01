@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { ChevronLeft, CheckCircle, BookOpen, Code, Youtube, Trophy, ExternalLink } from 'lucide-react';
+import { ChevronLeft, CheckCircle, BookOpen, Code, Youtube, Trophy, ExternalLink, Sparkles } from 'lucide-react';
 import { ProgressBar } from '../ui/ProgressBar';
 import { PracticeStation } from '../../features/playground/PracticeStation';
+import { FreePlayground } from '../../features/playground/FreePlayground';
 
 export const ModuleDetail = ({ module, completedItems, toggleItem, onBack }) => {
   const [activeTab, setActiveTab] = useState('theory');
@@ -49,14 +50,26 @@ export const ModuleDetail = ({ module, completedItems, toggleItem, onBack }) => 
                     : 'text-white hover:bg-white/10'
                 }`}
               >
-                <Code className="w-4 h-4" /> Prática
+                <Code className="w-4 h-4" /> Exercícios
+              </button>
+              <button 
+                onClick={() => setActiveTab('playground')} 
+                className={`px-4 py-2 rounded-md font-medium text-sm transition-all flex items-center gap-2 ${
+                  activeTab === 'playground' 
+                    ? 'bg-white text-gray-900 shadow-sm' 
+                    : 'text-white hover:bg-white/10'
+                }`}
+              >
+                <Sparkles className="w-4 h-4" /> Playground
               </button>
             </div>
           </div>
         </div>
 
         <div className="p-8 flex-1 bg-gray-50/50">
-          {activeTab === 'practice' ? (
+          {activeTab === 'playground' ? (
+            <FreePlayground />
+          ) : activeTab === 'practice' ? (
             <PracticeStation moduleId={module.id} />
           ) : (
             <div className="grid md:grid-cols-3 gap-8">
