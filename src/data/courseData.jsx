@@ -6,7 +6,7 @@ export const courseData = [
     title: 'Fase 1: A Fundação (HTML & CSS)',
     icon: <Layout className="w-6 h-6" />,
     color: 'bg-blue-500',
-    duration: '3-4 Semanas',
+    duration: '4-5 Semanas',
     description: 'Construa a estrutura e o visual. Sem isso, nada funciona.',
     topics: [
       { id: 'f1-t1', text: 'HTML Semântico (<header>, <main>, <footer>)' },
@@ -24,12 +24,39 @@ export const courseData = [
         title: 'Flexbox Froggy (Jogo Prático)', 
         url: 'https://flexboxfroggy.com/#pt-br', 
         type: 'game' 
+      },
+      { 
+        title: 'CSS Grid Garden (Jogo)', 
+        url: 'https://cssgridgarden.com/#pt-br', 
+        type: 'game' 
+      },
+      { 
+        title: 'CSS Flexbox - Origamid', 
+        url: 'https://www.youtube.com/watch?v=syn7Mb3VyB4', 
+        type: 'youtube' 
+      },
+      { 
+        title: 'HTML Semântico - Rocketseat', 
+        url: 'https://www.youtube.com/watch?v=IbDZOLiMGgk', 
+        type: 'youtube' 
       }
     ],
     challenge: {
       title: 'Clone de Tela de Login',
-      description: 'Escolha a tela de login do Instagram ou Netflix. Recrie visualmente usando apenas HTML e CSS.',
-      difficulty: 'Iniciante'
+      description: 'Escolha a tela de login do Instagram, Netflix, Spotify, Discord ou GitHub. Recrie visualmente usando apenas HTML e CSS com 80%+ de fidelidade.',
+      difficulty: 'Iniciante',
+      criteria: [
+        'Fidelidade visual (80%+ semelhante)',
+        'Código limpo e organizado',
+        'Uso correto de Flexbox/Grid',
+        'Formulário funcional (visual)',
+        'Responsividade mobile'
+      ],
+      bonus: [
+        'Animações CSS',
+        'Estados de hover/focus',
+        'Validação visual dos campos'
+      ]
     }
   },
   {
