@@ -111,7 +111,15 @@ export const FreePlayground = () => {
         setActiveProject(loaded[0]);
         setCurrentCode(loaded[0].code);
         setProjectName(loaded[0].name);
+      } else {
+        // Se não tem projetos, inicializa com template em branco
+        setCurrentCode(DEFAULT_TEMPLATES.blank.code);
+        setProjectName('Novo Projeto');
       }
+    } else {
+      // Primeira vez, inicializa com template em branco
+      setCurrentCode(DEFAULT_TEMPLATES.blank.code);
+      setProjectName('Novo Projeto');
     }
   }, []);
 
